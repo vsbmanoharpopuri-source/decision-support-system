@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Decidr — Smarter Decisions, Clearly</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════
+       LANDING PAGE
+  ════════════════════════════════════════════════ -->
+  <div id="landing-page" class="page active">
+
+    <!-- NAV -->
+    <nav class="nav">
+      <div class="nav-inner">
+        <a class="logo" href="#">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <circle cx="14" cy="14" r="13" stroke="var(--accent)" stroke-width="2"/>
+            <path d="M8 14 L14 8 L20 14 L14 20 Z" fill="var(--accent)" opacity="0.3"/>
+            <circle cx="14" cy="14" r="3" fill="var(--accent)"/>
+          </svg>
+          <span>Decidr</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+        </ul>
+        <button class="btn-primary nav-cta" onclick="showDashboard()">Launch App →</button>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-bg-grid"></div>
+      <div class="hero-blob hero-blob-1"></div>
+      <div class="hero-blob hero-blob-2"></div>
+
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <span class="pulse-dot"></span>
+          Decision Intelligence Platform
+        </div>
+        <h1 class="hero-title">
+          Make every choice<br />
+          <em>with confidence.</em>
+        </h1>
+        <p class="hero-sub">
+          Stop second-guessing yourself. Decidr uses weighted scoring to analyse
+          your options against what actually matters — so the right answer
+          reveals itself every time.
+        </p>
+        <div class="hero-actions">
+          <button class="btn-primary btn-lg" onclick="showDashboard()">
+            Start Deciding
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <a href="#how-it-works" class="btn-ghost btn-lg">See how it works</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-num">3×</span><span class="stat-lbl">Faster decisions</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><span class="stat-num">100%</span><span class="stat-lbl">Logic-driven</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><span class="stat-num">∞</span><span class="stat-lbl">Options & criteria</span></div>
+        </div>
+      </div>
+
+      <!-- Hero visual -->
+      <div class="hero-visual">
+        <div class="hero-card-preview">
+          <div class="preview-header">
+            <div class="preview-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <span class="preview-title-text">Decision Matrix</span>
+          </div>
+          <div class="preview-body">
+            <div class="preview-winner">
+              <svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 1l1.5 4h4l-3.3 2.4 1.3 4L7 9l-3.5 2.4 1.3-4L1.5 5h4z" fill="var(--accent)"/></svg>
+              <span>MacBook Pro 16" — 89.4 pts</span>
+            </div>
+            <div class="preview-bars">
+              <div class="pb-row">
+                <span>MacBook Pro</span>
+                <div class="pb-track"><div class="pb-fill" style="--w:89%"></div></div>
+                <span>89</span>
+              </div>
+              <div class="pb-row">
+                <span>Dell XPS 15</span>
+                <div class="pb-track"><div class="pb-fill pb-fill-2" style="--w:74%"></div></div>
+                <span>74</span>
+              </div>
+              <div class="pb-row">
+                <span>ThinkPad X1</span>
+                <div class="pb-track"><div class="pb-fill pb-fill-3" style="--w:61%"></div></div>
+                <span>61</span>
+              </div>
+            </div>
+            <div class="preview-criteria">
+              <span class="cr-tag">Cost ×0.3</span>
+              <span class="cr-tag">Performance ×0.4</span>
+              <span class="cr-tag">Battery ×0.3</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-float hero-float-1">
+          <svg width="20" height="20" viewBox="0 0 20 20"><path d="M10 2l2.4 5h5.3l-4.3 3.1 1.6 5L10 12l-5 3.1 1.6-5L2.3 7h5.3z" fill="var(--accent)"/></svg>
+          Best pick identified!
+        </div>
+        <div class="hero-float hero-float-2">
+          <svg width="18" height="18" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" stroke="var(--green)" stroke-width="2" fill="none"/><path d="M6 10l3 3 5-5" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          Criteria weighted
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features section" id="features">
+      <div class="container">
+        <div class="section-eyebrow">Capabilities</div>
+        <h2 class="section-title">Built for serious choices</h2>
+        <p class="section-sub">Whether you're selecting a career path, comparing products, or evaluating vendors — Decidr brings rigour to every decision.</p>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/></svg>
+            </div>
+            <h3>Multi-Option Analysis</h3>
+            <p>Add as many options as you need. Compare jobs, colleges, gadgets, services — anything that requires a structured choice.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Weighted Criteria</h3>
+            <p>Not all factors are equal. Assign importance weights so the algorithm reflects your real-world priorities.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Instant Scoring</h3>
+            <p>Scores update in real time. See how options stack up as you enter data — no waiting, no guessing.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="2" y="16" width="4" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="9" y="11" width="4" height="11" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="16" y="6" width="4" height="16" rx="1" stroke="currentColor" stroke-width="1.5"/></svg>
+            </div>
+            <h3>Visual Rankings</h3>
+            <p>Animated bar charts and a clear winner highlight make the results immediately understandable.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M12 8v4l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Time-Saving</h3>
+            <p>Replace hours of mental back-and-forth with a clean, structured process that yields a definitive answer in minutes.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 11l3 3L22 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>No Account Needed</h3>
+            <p>100% client-side. Your data never leaves your browser. Just open and start deciding — no sign-up required.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-section section" id="how-it-works">
+      <div class="container">
+        <div class="section-eyebrow">Process</div>
+        <h2 class="section-title">Four steps to clarity</h2>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">01</div>
+            <div class="step-body">
+              <h3>Add your options</h3>
+              <p>Enter the things you're choosing between — e.g., "Job at Google", "Job at Startup", "Freelance".</p>
+            </div>
+          </div>
+          <div class="step-connector"></div>
+          <div class="step">
+            <div class="step-num">02</div>
+            <div class="step-body">
+              <h3>Define criteria</h3>
+              <p>What matters to you? Salary, work-life balance, growth potential. Add each as a criterion.</p>
+            </div>
+          </div>
+          <div class="step-connector"></div>
+          <div class="step">
+            <div class="step-num">03</div>
+            <div class="step-body">
+              <h3>Set weights & scores</h3>
+              <p>Assign importance (weight) to each criterion, then score each option on a 1–10 scale.</p>
+            </div>
+          </div>
+          <div class="step-connector"></div>
+          <div class="step">
+            <div class="step-num">04</div>
+            <div class="step-body">
+              <h3>See your answer</h3>
+              <p>Hit Calculate. The algorithm multiplies weights by scores and surfaces the winner instantly.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="how-cta">
+          <button class="btn-primary btn-lg" onclick="showDashboard()">Try It Now — It's Free →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container footer-inner">
+        <a class="logo" href="#">
+          <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
+            <circle cx="14" cy="14" r="13" stroke="var(--accent)" stroke-width="2"/>
+            <path d="M8 14 L14 8 L20 14 L14 20 Z" fill="var(--accent)" opacity="0.3"/>
+            <circle cx="14" cy="14" r="3" fill="var(--accent)"/>
+          </svg>
+          <span>Decidr</span>
+        </a>
+        <p class="footer-copy">© 2025 Decidr. Built for clearer thinking. No data collected.</p>
+      </div>
+    </footer>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════
+       DASHBOARD PAGE
+  ════════════════════════════════════════════════ -->
+  <div id="dashboard-page" class="page">
+
+    <!-- DASH NAV -->
+    <nav class="dash-nav">
+      <div class="nav-inner">
+        <a class="logo" href="#" onclick="showLanding(); return false;">
+          <svg width="26" height="26" viewBox="0 0 28 28" fill="none">
+            <circle cx="14" cy="14" r="13" stroke="var(--accent)" stroke-width="2"/>
+            <path d="M8 14 L14 8 L20 14 L14 20 Z" fill="var(--accent)" opacity="0.3"/>
+            <circle cx="14" cy="14" r="3" fill="var(--accent)"/>
+          </svg>
+          <span>Decidr</span>
+        </a>
+        <div class="dash-nav-center">
+          <button class="dash-tab active" id="tab-setup" onclick="switchTab('setup')">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.2"/><rect x="9" y="1" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.2"/><rect x="1" y="9" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.2"/><rect x="9" y="9" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.2"/></svg>
+            Setup
+          </button>
+          <button class="dash-tab" id="tab-matrix" onclick="switchTab('matrix')">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" rx="1.5" stroke="currentColor" stroke-width="1.2"/><line x1="1" y1="5" x2="15" y2="5" stroke="currentColor" stroke-width="1.2"/><line x1="5" y1="1" x2="5" y2="15" stroke="currentColor" stroke-width="1.2"/></svg>
+            Score Matrix
+          </button>
+          <button class="dash-tab" id="tab-results" onclick="switchTab('results')">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="8" width="3" height="7" rx="0.5" stroke="currentColor" stroke-width="1.2"/><rect x="6" y="4" width="3" height="11" rx="0.5" stroke="currentColor" stroke-width="1.2"/><rect x="11" y="1" width="3" height="14" rx="0.5" stroke="currentColor" stroke-width="1.2"/></svg>
+            Results
+          </button>
+        </div>
+        <button class="btn-outline" onclick="resetAll()">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 8a6 6 0 1 0 1.2-3.6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="2,4 2,8 6,8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Reset
+        </button>
+      </div>
+    </nav>
+
+    <!-- PROGRESS BAR -->
+    <div class="progress-bar-outer">
+      <div class="progress-bar-inner" id="progress-bar"></div>
+    </div>
+
+    <!-- ───── TAB: SETUP ───── -->
+    <div class="dash-tab-panel active" id="panel-setup">
+      <div class="dash-container">
+        <div class="panel-grid">
+
+          <!-- Options Card -->
+          <div class="dash-card" id="options-card">
+            <div class="dash-card-header">
+              <div>
+                <h2 class="dash-card-title">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="2" width="7" height="7" rx="1.5" stroke="var(--accent)" stroke-width="1.5"/><rect x="11" y="2" width="7" height="7" rx="1.5" stroke="var(--accent)" stroke-width="1.5"/><rect x="2" y="11" width="7" height="7" rx="1.5" stroke="var(--accent)" stroke-width="1.5"/><rect x="11" y="11" width="7" height="7" rx="1.5" stroke="var(--accent)" stroke-width="1.5"/></svg>
+                  Options
+                </h2>
+                <p class="dash-card-sub">What are you choosing between?</p>
+              </div>
+              <span class="badge" id="options-count">0</span>
+            </div>
+
+            <div class="input-row">
+              <input type="text" id="option-input" class="input-field" placeholder="e.g. MacBook Pro 16&quot;" maxlength="60"
+                onkeydown="if(event.key==='Enter') addOption()" />
+              <button class="btn-add" onclick="addOption()">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><line x1="8" y1="2" x2="8" y2="14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="2" y1="8" x2="14" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                Add
+              </button>
+            </div>
+
+            <ul class="item-list" id="options-list">
+              <li class="empty-state" id="options-empty">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.5" opacity=".4"/><rect x="22" y="6" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.5" opacity=".4"/><rect x="6" y="22" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.5" opacity=".4"/><rect x="22" y="22" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.5" opacity=".4"/></svg>
+                <p>No options yet. Add something to decide between.</p>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Criteria Card -->
+          <div class="dash-card" id="criteria-card">
+            <div class="dash-card-header">
+              <div>
+                <h2 class="dash-card-title">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2l2 6h6l-5 3.6 1.9 5.9L10 14l-4.9 3.5L7 11.6 2 8h6z" stroke="var(--accent)" stroke-width="1.5" stroke-linejoin="round" fill="none"/></svg>
+                  Criteria & Weights
+                </h2>
+                <p class="dash-card-sub">What factors matter most to you?</p>
+              </div>
+              <span class="badge" id="criteria-count">0</span>
+            </div>
+
+            <div class="criteria-input-group">
+              <input type="text" id="criterion-input" class="input-field" placeholder="e.g. Performance" maxlength="40"
+                onkeydown="if(event.key==='Enter') addCriterion()" />
+              <div class="weight-row">
+                <label class="weight-label">
+                  Weight:
+                  <span class="weight-val" id="weight-display">5</span>
+                  <span class="weight-hint">/ 10</span>
+                </label>
+                <input type="range" id="weight-input" class="weight-slider" min="1" max="10" value="5"
+                  oninput="document.getElementById('weight-display').textContent=this.value" />
+              </div>
+              <button class="btn-add" onclick="addCriterion()">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><line x1="8" y1="2" x2="8" y2="14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="2" y1="8" x2="14" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                Add Criterion
+              </button>
+            </div>
+
+            <ul class="item-list" id="criteria-list">
+              <li class="empty-state" id="criteria-empty">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M20 4l4 12h12l-10 7.3 3.8 11.7L20 28l-9.8 7 3.8-11.7L4 16h12z" stroke="currentColor" stroke-width="1.5" opacity=".4" stroke-linejoin="round" fill="none"/></svg>
+                <p>No criteria yet. Define what matters for this decision.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Setup Actions -->
+        <div class="setup-actions">
+          <div class="setup-hint" id="setup-hint">
+            Add at least <strong>2 options</strong> and <strong>1 criterion</strong> to continue.
+          </div>
+          <button class="btn-primary btn-lg" id="goto-matrix-btn" onclick="switchTab('matrix')" disabled>
+            Continue to Score Matrix →
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ───── TAB: SCORE MATRIX ───── -->
+    <div class="dash-tab-panel" id="panel-matrix">
+      <div class="dash-container">
+        <div class="matrix-header">
+          <div>
+            <h2 class="dash-card-title">Score Matrix</h2>
+            <p class="dash-card-sub">Rate each option (1 = poor, 10 = excellent) against every criterion.</p>
+          </div>
+          <button class="btn-primary" id="calc-btn" onclick="calculate()">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1l2 5h5L11 9.5l1.9 5.5L8 12l-4.9 3 1.9-5.5L1 6h5z" fill="currentColor"/></svg>
+            Calculate Results
+          </button>
+        </div>
+        <div class="table-wrapper">
+          <table class="score-table" id="score-table">
+            <thead id="score-thead"></thead>
+            <tbody id="score-tbody"></tbody>
+          </table>
+        </div>
+        <p class="table-note">💡 Tip: Use Tab key to move between cells quickly.</p>
+      </div>
+    </div>
+
+    <!-- ───── TAB: RESULTS ───── -->
+    <div class="dash-tab-panel" id="panel-results">
+      <div class="dash-container">
+        <div id="results-placeholder" class="results-placeholder">
+          <svg width="60" height="60" viewBox="0 0 60 60" fill="none"><rect x="6" y="30" width="10" height="24" rx="2" stroke="currentColor" stroke-width="1.5" opacity=".4"/><rect x="25" y="18" width="10" height="36" rx="2" stroke="currentColor" stroke-width="1.5" opacity=".4"/><rect x="44" y="6" width="10" height="48" rx="2" stroke="currentColor" stroke-width="1.5" opacity=".4"/></svg>
+          <h3>No results yet</h3>
+          <p>Complete the Setup and Score Matrix tabs, then hit <strong>Calculate Results</strong>.</p>
+          <button class="btn-outline" onclick="switchTab('setup')">← Back to Setup</button>
+        </div>
+
+        <div id="results-content" style="display:none">
+          <!-- Winner Banner -->
+          <div class="winner-banner" id="winner-banner">
+            <div class="winner-confetti" id="confetti-container"></div>
+            <div class="winner-inner">
+              <div class="winner-crown">
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M4 28 L10 14 L18 22 L26 10 L32 28 Z" fill="var(--accent)" opacity=".9"/><rect x="4" y="28" width="28" height="4" rx="2" fill="var(--accent)"/><circle cx="4" cy="14" r="3" fill="var(--accent)"/><circle cx="18" cy="10" r="3" fill="var(--accent)"/><circle cx="32" cy="10" r="3" fill="var(--accent)"/></svg>
+              </div>
+              <div class="winner-text">
+                <div class="winner-label">Best Choice</div>
+                <div class="winner-name" id="winner-name">—</div>
+                <div class="winner-score" id="winner-score">—</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chart -->
+          <div class="results-section">
+            <h3 class="results-section-title">Score Comparison</h3>
+            <div class="chart-container" id="results-chart"></div>
+          </div>
+
+          <!-- Rankings Table -->
+          <div class="results-section">
+            <h3 class="results-section-title">Full Ranking</h3>
+            <div class="rankings" id="rankings-table"></div>
+          </div>
+
+          <!-- Breakdown -->
+          <div class="results-section">
+            <h3 class="results-section-title">Criteria Breakdown</h3>
+            <div id="breakdown-grid" class="breakdown-grid"></div>
+          </div>
+
+          <div class="results-actions">
+            <button class="btn-outline" onclick="switchTab('matrix')">← Edit Scores</button>
+            <button class="btn-primary" onclick="resetAll()">Start New Decision</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
