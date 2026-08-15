@@ -11,9 +11,58 @@
 <body>
 
   <!-- ═══════════════════════════════════════════════
+       AUTH PAGE (Phase 2)
+       Gate: shown when no session exists. Landing/Dashboard
+       are only reachable after a successful sign-in.
+  ════════════════════════════════════════════════ -->
+  <div id="auth-page" class="page">
+    <div class="auth-wrap">
+      <div class="auth-card">
+        <a class="logo auth-logo" href="#">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <circle cx="14" cy="14" r="13" stroke="var(--accent)" stroke-width="2"/>
+            <path d="M8 14 L14 8 L20 14 L14 20 Z" fill="var(--accent)" opacity="0.3"/>
+            <circle cx="14" cy="14" r="3" fill="var(--accent)"/>
+          </svg>
+          <span>Decidr</span>
+        </a>
+
+        <div class="auth-tabs">
+          <button class="auth-tab active" id="auth-tab-login" onclick="switchAuthTab('login')">Log In</button>
+          <button class="auth-tab" id="auth-tab-signup" onclick="switchAuthTab('signup')">Sign Up</button>
+        </div>
+
+        <!-- LOG IN FORM -->
+        <form id="auth-form-login" class="auth-form active" onsubmit="return handleLogin(event)">
+          <label class="auth-label">Email
+            <input type="email" id="login-email" class="input-field" placeholder="you@example.com" required autocomplete="email" />
+          </label>
+          <label class="auth-label">Password
+            <input type="password" id="login-password" class="input-field" placeholder="••••••••" required autocomplete="current-password" />
+          </label>
+          <button type="submit" class="btn-primary btn-lg auth-submit" id="login-submit-btn">Log In</button>
+        </form>
+
+        <!-- SIGN UP FORM -->
+        <form id="auth-form-signup" class="auth-form" onsubmit="return handleSignup(event)">
+          <label class="auth-label">Email
+            <input type="email" id="signup-email" class="input-field" placeholder="you@example.com" required autocomplete="email" />
+          </label>
+          <label class="auth-label">Password
+            <input type="password" id="signup-password" class="input-field" placeholder="At least 6 characters" required minlength="6" autocomplete="new-password" />
+          </label>
+          <button type="submit" class="btn-primary btn-lg auth-submit" id="signup-submit-btn">Sign Up</button>
+        </form>
+
+        <p class="auth-message" id="auth-message"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════
        LANDING PAGE
   ════════════════════════════════════════════════ -->
-  <div id="landing-page" class="page active">
+  <div id="landing-page" class="page">
 
     <!-- NAV -->
     <nav class="nav">
@@ -26,10 +75,13 @@
           </svg>
           <span>Decidr</span>
         </a>
+        <span id="db-status" class="db-status">Supabase: checking…</span>
+        <span id="build-version" class="db-status" title="Should read: Build: Phase 4B (phase4b-1786764577)">loading…</span>
         <ul class="nav-links">
           <li><a href="#features">Features</a></li>
           <li><a href="#how-it-works">How It Works</a></li>
         </ul>
+        <button class="btn-ghost nav-cta" onclick="handleLogout()">Log Out</button>
         <button class="btn-primary nav-cta" onclick="showDashboard()">Launch App →</button>
       </div>
     </nav>
@@ -271,6 +323,7 @@
           <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 8a6 6 0 1 0 1.2-3.6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="2,4 2,8 6,8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           Reset
         </button>
+        <button class="btn-outline" onclick="handleLogout()">Log Out</button>
       </div>
     </nav>
 
@@ -300,7 +353,7 @@
             <div class="input-row">
               <input type="text" id="option-input" class="input-field" placeholder="e.g. MacBook Pro 16&quot;" maxlength="60"
                 onkeydown="if(event.key==='Enter') addOption()" />
-              <button class="btn-add" onclick="addOption()">
+              <button id="add-option-btn" class="btn-add" onclick="addOption()">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><line x1="8" y1="2" x2="8" y2="14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="2" y1="8" x2="14" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
                 Add
               </button>
@@ -445,6 +498,11 @@
   <!-- TOAST -->
   <div class="toast" id="toast"></div>
 
-  <script src="script.js"></script>
+  <!-- Supabase SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script src="supabaseClient.js?v=phase4b-1786764577"></script>
+  <script src="crud.js?v=phase4b-1786764577"></script>
+  <script src="auth.js?v=phase4b-1786764577"></script>
+  <script src="script.js?v=phase4b-1786764577"></script>
 </body>
 </html>
