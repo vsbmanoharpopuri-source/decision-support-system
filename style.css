@@ -208,6 +208,17 @@ ul { list-style: none; }
   color: var(--text);
   flex-shrink: 0;
 }
+.db-status {
+  font-size: .75rem;
+  font-weight: 500;
+  color: var(--text-3, #888);
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--border, #333);
+  white-space: nowrap;
+}
+.db-status-ok { color: var(--green, #3fcf8e); border-color: var(--green, #3fcf8e); }
+.db-status-error { color: var(--red, #ff5757); border-color: var(--red, #ff5757); }
 .nav-links {
   display: flex;
   gap: 28px;
@@ -1302,3 +1313,68 @@ ul { list-style: none; }
   .breakdown-grid { grid-template-columns: 1fr 1fr; }
   .results-actions { justify-content: stretch; flex-direction: column; }
 }
+
+/* ═══════════════════════════════════════════════════
+   AUTH PAGE (Phase 2)
+═══════════════════════════════════════════════════ */
+.auth-wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: var(--bg);
+}
+.auth-card {
+  width: 100%;
+  max-width: 380px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+}
+.auth-logo {
+  justify-content: center;
+  margin-bottom: 28px;
+}
+.auth-tabs {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 4px;
+  margin-bottom: 24px;
+  gap: 4px;
+}
+.auth-tab {
+  flex: 1;
+  padding: 9px;
+  background: transparent;
+  color: var(--text-2);
+  font-family: var(--font-body);
+  font-size: .88rem;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: background .15s, color .15s;
+}
+.auth-tab.active { background: var(--accent-dim); color: var(--accent); }
+.auth-form { display: none; flex-direction: column; gap: 16px; }
+.auth-form.active { display: flex; }
+.auth-label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: .82rem;
+  color: var(--text-2);
+  font-weight: 500;
+}
+.auth-submit { width: 100%; justify-content: center; margin-top: 4px; }
+.auth-submit:disabled { opacity: .6; cursor: not-allowed; }
+.auth-message {
+  margin-top: 16px;
+  font-size: .85rem;
+  text-align: center;
+  min-height: 1.2em;
+  color: var(--text-2);
+}
+.auth-message.error { color: var(--red); }
+.auth-message.success { color: var(--green); }
